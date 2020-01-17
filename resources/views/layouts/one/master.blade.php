@@ -43,7 +43,8 @@
         <footer class="px-4 py-6 border-t">
             <div class="container mx-auto">
                 Copyrights &copy; {{ date('Y') }}. Build with <a class="text-blue-600" href="https://laravel.com/"
-                    target="_blank">Laravel</a>
+                    target="_blank">Laravel</a>, <a class="text-blue-600" href="https://tailwindcss.com"
+                    target="_blank">TailwindCSS</a>
                 and <a class="text-blue-600" href="https://github.com/alpinejs/alpine/" target="_blank">AlpineJS</a>.
             </div>
         </footer>
