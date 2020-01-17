@@ -1,0 +1,52 @@
+[
+    {
+        "user_id": 1,
+        "name": "Shopping"
+    },
+    {
+        "user_id": 1,
+        "name": "Health"
+    },
+    {
+        "user_id": 1,
+        "name": "Food"
+    },
+    {
+        "user_id": 1,
+        "name": "Travel"
+    },
+
+    {
+        "user_id": 2,
+        "name": "Shopping"
+    },
+    {
+        "user_id": 2,
+        "name": "Health"
+    },
+    {
+        "user_id": 2,
+        "name": "Food"
+    },
+    {
+        "user_id": 2,
+        "name": "Travel"
+    },
+
+    {
+        "user_id": 3,
+        "name": "Shopping"
+    },
+    {
+        "user_id": 3,
+        "name": "Health"
+    },
+    {
+        "user_id": 3,
+        "name": "Food"
+    },
+    {
+        "user_id": 3,
+        "name": "Travel"
+    }
+]

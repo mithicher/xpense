@@ -1,0 +1,304 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url("/fonts/Manrope/Manrope-Light.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Manrope/Manrope-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/fonts/Manrope/Manrope-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/fonts/Manrope/Manrope-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/Manrope/Manrope-Bold.woff2") format("woff2");
+}
+
+* {
+    -webkit-tab-highlight-color: transparent;
+    font-family: "Manrope", sans-serif !important;
+}
+
+[x-cloak] {
+    display: none;
+}
+
+/* Transitions */
+.transition-slow {
+    transition: all 0.2s ease;
+}
+
+.scale-90 {
+    transform: scale(0.9);
+}
+
+.scale-100 {
+    transform: scale(1);
+}
+
+/* html entity classes */
+input::placeholder {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* shadow classes */
+.shadow-sm {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* spinner class */
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.base-spinner {
+    position: relative;
+    overflow: hidden;
+}
+.base-spinner:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    background-color: inherit;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+.base-spinner:after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-top-color: inherit;
+    animation: spinner 0.6s linear infinite;
+    z-index: 2;
+}
+
+/* navlink active classes */
+.active,
+.active-left {
+    position: relative;
+}
+.active:after {
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    content: "";
+    height: 3px;
+    width: 100%;
+    border-radius: 1000px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: #4299e1;
+}
+.active-left:after {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    content: "";
+    height: 80%;
+    width: 5px;
+    border-radius: 1000px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #4299e1;
+}
+
+/* Datepicker */
+
+.date-input {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    z-index: 2000;
+    margin: 3px 0 0 0;
+    border-top: 1px solid #eee;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.date-input.is-hidden {
+    display: none;
+}
+.date-input .pika-title {
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+}
+.date-input .pika-prev,
+.date-input .pika-next {
+    margin-top: 0;
+    /* margin-top: 0.5rem; */
+    padding: 0.25rem 0;
+    cursor: pointer;
+    color: #4299e1;
+}
+.date-input .pika-prev:hover,
+.date-input .pika-next:hover {
+    text-decoration: underline;
+}
+.date-input .pika-prev {
+    float: left;
+}
+.date-input .pika-next {
+    float: right;
+}
+.date-input .pika-label {
+    display: inline-block;
+    font-size: 0;
+}
+.date-input .pika-select-month,
+.date-input .pika-select-year {
+    display: inline-block;
+    border: 1px solid #ddd;
+    color: #444;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    appearance: none;
+}
+.date-input .pika-select-month:focus,
+.date-input .pika-select-year:focus {
+    border-color: #cbd5e0;
+    outline: none;
+}
+.date-input .pika-select-month {
+    margin-right: 0.25em;
+}
+.date-input table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.date-input table th {
+    width: 2em;
+    height: 2em;
+    font-weight: normal;
+    color: #718096;
+    text-align: center;
+}
+.date-input table th abbr {
+    text-decoration: none;
+}
+.date-input table td {
+    padding: 2px;
+}
+.date-input table td button {
+    border: 1px solid #e2e8f0;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    color: #555;
+    border-radius: 10px;
+}
+.date-input table td button:hover {
+    background-color: #bee3f8;
+}
+.date-input table td.is-today button {
+    background-color: #ebf8ff;
+}
+.date-input table td.is-selected button {
+    background-color: #3182ce;
+}
+.date-input table td.is-selected button {
+    color: white;
+}
+.date-input table td.is-selected button:hover {
+    color: white;
+}
+
+/* Select */
+.form-select {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAAABGdBTUEAALGPC/xhBQAAAQtJREFUOBG1lEEOgjAQRalbGj2OG9caOACn4ALGtfEuHACiazceR1PWOH/CNA3aMiTaBDpt/7zPdBKy7M/DCL9pGkvxxVp7KsvyJftL5rZt1865M+Ucq6pyyF3hNcI7Cuu+728QYn/JQA5yKaempxuZmQngOwEaYx55nu+1lQh8GIatMGi+01NwBcEmhxBqK4nAPZJ78K0KKFAJmR3oPp8+Iwgob0Oa6+TLoeCvRx+mTUYf/FVBGTPRwDkfLxnaSrRwcH0FWhNOmrkWYbE2XEicqgSa1J0LQ+aPCuQgZiLnwewbGuz5MGoAhcIkCQcjaTBjMgtXGURMVHC1wcQEy0J+Zlj8bKAnY1/UzDe2dbAVqfXn6wAAAABJRU5ErkJggg==");
+    background-size: 0.7rem;
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+}
+
+/* Animations */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+    0% {
+        transform: translateY(-1rem);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes slideIn {
+    0% {
+        -webkit-transform: transform;
+        -webkit-opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        -webkit-opacity: 1;
+    }
+    0% {
+        -webkit-transform: translateY(1rem);
+        -webkit-opacity: 0;
+    }
+}
+
+.slideIn {
+    -webkit-animation-name: slideIn;
+    animation-name: slideIn;
+}
