@@ -42,7 +42,7 @@ class User extends Authenticatable
 
     public function categories()
     {
-        return $this->hasMany(category::class);
+        return $this->hasMany(Category::class);
     }
 
     protected static function boot()
