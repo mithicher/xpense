@@ -16,7 +16,7 @@
 		'size' => 'large',
 		'classes' => 'mb-2'
 		])
-		Last 30 days expenses
+		Expenses for {{now()->format('M, Y')}}
 		@endcomponent
 		@component('components.card')
 		@include('reports.barChartWidget', [
