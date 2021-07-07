@@ -31,7 +31,9 @@ class HomeController extends Controller
 
         $expensesLastSevenDays = Expense::OfLoggedInUser()->where('expense_date', '>=', Carbon::today()->subDays(7))->sum('expense_amount');
 
-        $expensesCurrentMonth = Expense::OfLoggedInUser()->where('expense_date', '>=', Carbon::today()->subDays(30))->sum('expense_amount');
+        $startOfCurrentMonth = Carbon::now()->startOfMonth();
+        $endOfCurrentMonth = Carbon::now()->endOfMonth();
+        $expensesCurrentMonth = Expense::OfLoggedInUser()->whereBetween('expense_date', [$startOfCurrentMonth, $endOfCurrentMonth])->sum('expense_amount');
 
         return view('home', compact('expenses', 'expensesLastSevenDays', 'expensesCurrentMonth', 'expensesYesterday'));
     }
